@@ -20,6 +20,13 @@ function repeater(/* str, options */) {
   // remove line with error and write your code here
 }
 
+function repeater(str, options) {
+  let addedStr = new Array(options.additionRepeatTimes).fill((options.addition === null) ? String(options.addition) : options.addition).join((options.additionSeparator === undefined) ? '|' : options.additionSeparator);
+  let generalStr = str + addedStr;
+  let result = new Array(options.repeatTimes).fill(generalStr).join((options.separator === undefined) ? '+' : options.separator)
+  return result
+  }
+
 module.exports = {
   repeater
 };
